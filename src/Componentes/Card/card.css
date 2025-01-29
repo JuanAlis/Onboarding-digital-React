@@ -1,0 +1,140 @@
+/* Card.css */
+.card {
+    position: relative;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 16px;
+    box-shadow: rgba(156, 145, 145, 0.3) 0px 19px 38px, rgba(144, 126, 126, 0.22) 0px 15px 12px;
+    color: #111;
+    height: 550px;
+    width: 250px;
+    overflow: hidden;
+}
+
+/* Background color */
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 58%;
+    background-color: var(--bgColor, #f0f0f0);
+    /* Dynamic background */
+    z-index: 1;
+    text-align: center;
+}
+
+/* Estilo para la imagen SVG */
+.card-image {
+    position: absolute;
+    object-fit: contain;
+    margin-bottom: 16px;
+    z-index: 2;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+}
+
+/* Estilo del texto */
+.card-text {
+    position: relative;
+    z-index: 3;
+    padding: 0px;
+    margin-top: 320px;
+    margin-bottom: 0px !important;
+    padding-bottom: 0;
+    text-align: start;
+}
+
+/*Text description*/
+.text-description {
+    position: relative;
+    z-index: 3;
+    padding: 0px;
+    text-align: start;
+    font-size: 15px;
+    padding-top: 0;
+    padding-top: 0;
+}
+
+
+
+/* Animación de salida original con fundido a negro */
+@keyframes fadeOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(30px) brightness(0.3);
+    }
+    to {
+        transform: translateX(-100%) rotate(-360deg);
+        opacity: 0;
+        filter: blur(30px) brightness(0); /* Añadido brightness(0) para negro total */
+    }
+}
+
+/* Animación de entrada original con aparición desde negro */
+@keyframes fadeInRight {
+    from {
+        transform: translateX(100%) rotate(360deg);
+        opacity: 0;
+        filter: blur(30px) brightness(0); /* Comienza en negro */
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        filter: blur(0) brightness(1); /* Termina con brillo normal */
+    }
+}
+
+/* Clases existentes sin modificaciones de nombre */
+.card {
+    position: relative;
+    will-change: transform, opacity, filter;
+    z-index: 1; 
+}
+
+
+.fade-out {
+    animation: fadeOutLeft 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+.fade-in {
+    animation: fadeInRight 0.7s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+/* Añadido efecto de sobreimpresión para profundidad */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none; /* Permite clics a través del overlay */
+    z-index: -1; 
+}
+
+.fade-out::after {
+    opacity: 1; /* Oscurece progresivamente durante la salida */
+}
+
+.fade-in::after {
+    opacity: 0.5; /* Oscurece ligeramente durante la entrada */
+    animation: fadeInOverlay 0.7s forwards;
+}
+
+@keyframes fadeInOverlay {
+    to {
+        opacity: 0;
+    }
+}

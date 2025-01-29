@@ -1,0 +1,26 @@
+/* Estilo del contenedor de los indicadores */
+.indicator-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Estilo base de las boletas (dots) */
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #040404;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    /* Animación suave */
+}
+
+/* Estilo para la boleta activa */
+.dot-active {
+    width: 20px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #040404;
+    /* Cambiar a azul cuando está activo */
+}

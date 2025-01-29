@@ -1,0 +1,43 @@
+/* Botón base */
+.button {
+    height: 30px;
+    width: 30px;
+    margin-top: 16px;
+    padding: 5px;
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Cambiado para manejar el diseño */
+    bottom: 8px;
+    right: 0px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    /* Transición suave */
+}
+
+/* Botón para la dirección derecha */
+.button-right {
+    background-color: black;
+    transform: rotate(360deg);
+}
+
+/* Botón para la dirección izquierda */
+.button-left {
+    background-color: white;
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
