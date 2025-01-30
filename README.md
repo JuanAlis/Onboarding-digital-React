@@ -21,8 +21,7 @@ npm run dev
 cd entendiendoreact
 git clone https://github.com/JuanAlis/Onboarding-digital-React.git
 
-
-
+---
 ### 👨‍💻 Desarrollado por JuanAlís
 
 Si te gustó este proyecto, ¡no olvides darle ⭐ en GitHub! 🚀
