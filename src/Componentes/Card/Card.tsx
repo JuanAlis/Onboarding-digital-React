@@ -38,10 +38,10 @@ export const Card: React.FC<CardProps> = ({ title, description, bgColor, imageUr
         // Después de la animación de salida, cambia al nuevo contenido y activa la entrada
         const timeout = setTimeout(() => {
             setAnimationState('fade-in');
-        }, 500); // Duración de la animación
+        }, 1500); // Duración de la animación
 
         return () => clearTimeout(timeout); // Limpia el timeout si el componente se desmonta
-    }, [imageUrl ,title ,description]); // Se activa al cambiar el contenido
+    }, [imageUrl]); // Se activa al cambiar el contenido
 
 
 
