@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 import Card from './Componentes/Card/Card';
 import { AnimatePresence } from 'framer-motion';
 
@@ -62,7 +62,7 @@ const backStep = () => {
   return (
     <div style={{ display: `flex`, justifyContent: `center`, alignItems: `center`, height: `100vh`, gap: "16px", width: "100% " }}>
       
-      <AnimatePresence mode="await">
+      <AnimatePresence mode="wait">
       <Card
         title={currentCardData.title}
         description={currentCardData.description}

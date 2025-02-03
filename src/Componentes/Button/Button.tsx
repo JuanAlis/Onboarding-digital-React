@@ -1,11 +1,10 @@
-import React from 'react'
-import "./button.css"
+import React from 'react';
+import "./button.css";
 
 interface Button {
     direction: string,
     action: () => void;
 }
-// const Button: React.FC<Button> = ({ nextStep }) => {
 const Button: React.FC<Button> = ({ direction, action }) => {
     return (
         <div

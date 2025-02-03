@@ -1,4 +1,3 @@
-//Card.tsx
 import "./card.css";
 import Button from '../Button/Button';
 import Indicator from '../indicador/Indicator';
@@ -9,7 +8,6 @@ import React, { useState, useEffect } from 'react';
 
 
 
-//Definicion del tipo de las propiedades  prop
 interface CardProps {
     title: string;
     description: string;
@@ -32,16 +30,14 @@ export const Card: React.FC<CardProps> = ({ title, description, bgColor, imageUr
     const [animationState, setAnimationState] = useState<'fade-in' | 'fade-out'>('fade-in');
 
     useEffect(() => {
-        // Inicia la animación de salida
         setAnimationState('fade-out');
 
-        // Después de la animación de salida, cambia al nuevo contenido y activa la entrada
         const timeout = setTimeout(() => {
             setAnimationState('fade-in');
-        }, 1500); // Duración de la animación
+        }, 1500); 
 
-        return () => clearTimeout(timeout); // Limpia el timeout si el componente se desmonta
-    }, [imageUrl]); // Se activa al cambiar el contenido
+        return () => clearTimeout(timeout); 
+    }, [imageUrl]);
 
 
 
@@ -52,7 +48,7 @@ export const Card: React.FC<CardProps> = ({ title, description, bgColor, imageUr
             <div className='card-bg'
                 style={{ backgroundColor: bgColor || "#f0f0f0" }}
             ></div>
-            {imageUrl && ( //Estilo de la imagen SVG
+            {imageUrl && ( 
                 <img 
                     className='card-image'
                     src={imageUrl}

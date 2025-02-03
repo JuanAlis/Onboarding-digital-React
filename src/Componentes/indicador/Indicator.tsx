@@ -1,5 +1,5 @@
-import React from 'react'
-import "./indicator.css"
+import React from 'react';
+import "./indicator.css";
 import { motion } from 'framer-motion';
 
 
@@ -8,7 +8,7 @@ interface IndicatorProps {
     currentStep: number;
     dotClick: (step: number) => void;
 }
-// const Button: React.FC<Button> = ({ nextStep }) => {
+
 const Indicator: React.FC<IndicatorProps> = ({ totalSteps, currentStep, dotClick }) => {
     return (
         <div className='indicator-wrapper'>
@@ -23,4 +23,4 @@ const Indicator: React.FC<IndicatorProps> = ({ totalSteps, currentStep, dotClick
     );
 };
 
-export default Indicator
+export default Indicator;
